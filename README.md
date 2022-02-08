@@ -2,12 +2,16 @@
 
 This is a companion python module to my Northstar mod [ParseableLogs](https://northstar.thunderstore.io/package/laundmo/ParseableLogs/)
 
+
 ## Usage:
+
+Note: The library should be fully typehinted, so i encourage you to use a typechecking linter such as pylance 
 
 The basic usage is as follows
 
 ```py
 from logparse.gameserver import Server
+from logparse.playerlist import Player # for typehints
 
 server = Server(playerlist_timeout=120)
 
