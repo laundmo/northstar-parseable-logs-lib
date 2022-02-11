@@ -2,6 +2,10 @@
 
 This is a companion python module to my Northstar mod [ParseableLogs](https://northstar.thunderstore.io/package/laundmo/ParseableLogs/)
 
+## Installation
+
+for now clone the repository and run `pip install .`
+
 ## Usage:
 
 Note: The library should be fully typehinted, so i encourage you to use a typechecking linter such as pylance
@@ -9,8 +13,8 @@ Note: The library should be fully typehinted, so i encourage you to use a typech
 The basic usage is as follows
 
 ```py
-from logparse import Server
-from logparse.models import Player
+from r2logparse import Server
+from r2logparse.models import Player
 
 server = Server(playerlist_timeout=120)
 
