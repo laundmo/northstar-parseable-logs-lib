@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "r2logparse"
+version = "0.1.0"
+description = "Parse logs from the ParseableLogs Northstar mod"
+authors = ["laundmo <laurinschmidt2001@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dataclass-factory = "^2.14"
+python-dateutil = "^2.8.2"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+websockets = "^10.1"
+pip = "^22.0.3"
+
+[build-system]
+requires = ["poetry-core @ git+https://github.com/python-poetry/poetry-core.git@master"]
+build-backend = "poetry.core.masonry.api"

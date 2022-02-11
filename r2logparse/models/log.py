@@ -1,33 +1,17 @@
 from dataclasses import dataclass
-from enum import Enum
-import json
-import re
+
 from datetime import datetime
+import json
+
+import re
 from dateutil.parser import parse as parse_dt
-from logparse.parseable_log import SVOlog, load as load_svo
 
-
-class MessageTypes(Enum):
-    log = "log"
-
-
-def get_subclasses(cls):
-    for subclass in cls.__subclasses__():
-        yield from get_subclasses(subclass)
-        yield subclass
+from r2logparse.models import SVOlog, load_svo
 
 
 @dataclass
-class BaseMessage:
+class BaseLog:
     pass
-
-
-def parse_msg(logmsg: str):
-    for subclass in get_subclasses(BaseMessage):
-        result = subclass.from_logmsg(logmsg)
-        if result:
-            return result
-    # return logmsg
 
 
 # https://regex101.com/r/QrTvxU/1
@@ -38,7 +22,7 @@ chat_re = re.compile(
 
 
 @dataclass
-class ChatMessage(BaseMessage):
+class ChatLog(BaseLog):
     time: datetime
     message: str
     index: int
@@ -61,7 +45,7 @@ class ChatMessage(BaseMessage):
 
 
 @dataclass
-class ParseableLogMessage(BaseMessage):
+class ParseableLog(BaseLog):
     time: datetime
     svo_log: SVOlog
 

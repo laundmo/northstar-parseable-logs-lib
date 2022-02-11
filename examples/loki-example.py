@@ -4,8 +4,8 @@ from urllib.parse import urlencode
 
 import websockets
 
-from logparse.gameserver import ChatMessage, Server
-from logparse.playerlist import Player
+from r2logparse.models import ChatMessage, Player
+from r2logparse import Server
 
 gameserver = Server()
 

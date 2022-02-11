@@ -7,7 +7,8 @@ This is a companion python module to my Northstar mod [ParseableLogs](https://no
 The basic usage is as follows
 
 ```py
-from logparse.gameserver import Server
+from logparse import Server
+from logparse.models import Player
 
 server = Server(playerlist_timeout=120)
 
